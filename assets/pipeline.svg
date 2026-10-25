@@ -1,0 +1,20 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='560' height='478' viewBox='0 0 560 478'>
+<defs><marker id='arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#ff8a3d'/></marker></defs>
+<rect width='560' height='478' fill='#ffffff'/>
+<text x='40' y='62' font-family='Inter, Segoe UI, Arial, sans-serif' font-size='20' font-weight='600' fill='#1a1a1a'>Конвейер документов</text>
+<rect x='40' y='80' width='480' height='64' rx='10' fill='#faf7f2' stroke='#e2d9cc' stroke-width='1.5'/>
+<text x='60' y='118.0' font-family='Inter, Segoe UI, Arial, sans-serif' font-size='16' fill='#1a1a1a'>Скан бумажного бланка</text>
+<text x='500' y='130' font-family='Inter, Segoe UI, Arial, sans-serif' font-size='12' fill='#8a7f72' text-anchor='end'>фото или PDF</text>
+<line x1='280.0' y1='148' x2='280.0' y2='170' stroke='#ff8a3d' stroke-width='2' marker-end='url(#arrow)'/>
+<rect x='40' y='178' width='480' height='64' rx='10' fill='#faf7f2' stroke='#e2d9cc' stroke-width='1.5'/>
+<text x='60' y='216.0' font-family='Inter, Segoe UI, Arial, sans-serif' font-size='16' fill='#1a1a1a'>OCR с русским языком</text>
+<text x='500' y='228' font-family='Inter, Segoe UI, Arial, sans-serif' font-size='12' fill='#8a7f72' text-anchor='end'>Tesseract, проверка правил</text>
+<line x1='280.0' y1='246' x2='280.0' y2='268' stroke='#ff8a3d' stroke-width='2' marker-end='url(#arrow)'/>
+<rect x='40' y='276' width='480' height='64' rx='10' fill='#faf7f2' stroke='#e2d9cc' stroke-width='1.5'/>
+<text x='60' y='314.0' font-family='Inter, Segoe UI, Arial, sans-serif' font-size='16' fill='#1a1a1a'>Таблица Excel</text>
+<text x='500' y='326' font-family='Inter, Segoe UI, Arial, sans-serif' font-size='12' fill='#8a7f72' text-anchor='end'>номера, даты, суммы</text>
+<line x1='280.0' y1='344' x2='280.0' y2='366' stroke='#ff8a3d' stroke-width='2' marker-end='url(#arrow)'/>
+<rect x='40' y='374' width='480' height='64' rx='10' fill='#faf7f2' stroke='#e2d9cc' stroke-width='1.5'/>
+<text x='60' y='412.0' font-family='Inter, Segoe UI, Arial, sans-serif' font-size='16' fill='#1a1a1a'>Документ Word по шаблону</text>
+<text x='500' y='424' font-family='Inter, Segoe UI, Arial, sans-serif' font-size='12' fill='#8a7f72' text-anchor='end'>DOCX и PDF</text>
+</svg>
