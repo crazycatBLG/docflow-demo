@@ -37,6 +37,17 @@
   section:nth-of-type(2) { animation-delay: .06s; }
   section:nth-of-type(3) { animation-delay: .12s; }
   @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+  @supports (animation-timeline: view()) {
+    .rise { animation: rise-in linear both; animation-timeline: view(); animation-range: entry 8% cover 34%; }
+    .demo.zoom { animation: zoom-in linear both; animation-timeline: view(); animation-range: entry 0% entry 55%; }
+    @keyframes rise-in { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+    @keyframes zoom-in { from { transform: scale(.965); opacity: .55; } to { transform: scale(1); opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .rise, .demo.zoom { animation: none; opacity: 1; transform: none; }
+    }
+  }
+
   footer { padding: 36px 0 64px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
   .tag { display:inline-block; font-size:13px; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:4px 10px; margin:0 6px 6px 0; }
 </style>
@@ -54,7 +65,7 @@
   <a class="cta" href="#contact">Прислать документ на пробу</a>
 </header>
 
-<section>
+<section class="rise">
   <h2>Что можно заказать</h2>
   <div class="grid">
     <div class="card"><h3>Скан → Excel</h3><p>Таблицы, ведомости, реестры. Числа, даты и номера сверяются, расхождения помечаются для проверки.</p></div>
@@ -63,10 +74,10 @@
   </div>
 </section>
 
-<section>
+<section class="rise">
   <h2>Как это выглядит</h2>
   <p class="lead" style="font-size:16px">Скан таблицы → распознавание → Excel → готовый документ Word по шаблону.</p>
-  <img class="demo" src="assets/before-after.png" alt="До: бумажный бланк, после: таблица Excel">
+  <img class="demo zoom" src="assets/before-after.png" alt="До: бумажный бланк, после: таблица Excel">
   <p style="color:var(--muted); font-size:14px; margin:10px 0 18px">Слева — как приходит, справа — что получается.</p>
   <img class="demo" src="assets/pipeline.svg" alt="Схема: скан, OCR, Excel, документ">
   <div class="files">
@@ -76,7 +87,7 @@
   </div>
 </section>
 
-<section>
+<section class="rise">
   <h2>Примеры документов</h2>
   <p class="lead" style="font-size:16px">Обезличенные образцы из практики: следовая документация и процессуальные акты. Всё вымышлено, но структура, формулировки и реквизиты — настоящие.</p>
   <div class="files">
@@ -85,7 +96,7 @@
   </div>
 </section>
 
-<section>
+<section class="rise">
   <h2>Цены</h2>
   <table>
     <tr><th>Работа</th><th>Цена</th></tr>
@@ -98,7 +109,7 @@
   <p style="color:var(--muted); font-size:15px; margin-top:12px">Минимальный заказ — 2 000 ₽. Первые 20 страниц бесплатно: вы видите качество на своих документах до оплаты.</p>
 </section>
 
-<section id="contact">
+<section id="contact" class="rise">
   <h2>Связаться</h2>
   <p>Пришлите одну страницу — верну результат в тот же день, бесплатно.</p>
   <p style="font-size:18px">
