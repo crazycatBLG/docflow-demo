@@ -1,0 +1,27 @@
+<!doctype html><html lang="ru"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Проверка копии по коду</title>
+<style>
+body{margin:0;background:#fbf9f5;color:#1b1b1b;font:16px/1.55 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.wrap{max-width:560px;margin:0 auto;padding:80px 24px}
+h1{font-size:26px;margin:0 0 8px}
+p{color:#6f675e;margin:0 0 24px}
+input{width:100%;padding:14px 16px;border:1px solid #e7ddcf;border-radius:10px;font:20px ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase}
+button{margin-top:14px;background:#ff8a3d;color:#fff;border:0;border-radius:10px;padding:14px 22px;font-size:16px;font-weight:600;cursor:pointer}
+small{display:block;margin-top:16px;color:#6f675e}
+</style>
+<div class="wrap">
+ <h1>Проверка копии по коду</h1>
+ <p>Введите код с титульного листа или из QR-кода.</p>
+ <input id="c" placeholder="например, KB846HWJ" autocomplete="off" maxlength="8">
+ <button id="go">Проверить</button>
+ <small>Код есть на каждой копии: он однозначно указывает на паспорт документа.</small>
+</div>
+<script>
+document.getElementById('go').onclick = () => {
+  const v = document.getElementById('c').value.trim().toUpperCase().replace(/[^2-9A-HJ-NP-Z]/g,'');
+  if (v.length === 8) location.href = v + '/';
+  else alert('Код состоит из 8 символов.');
+};
+document.getElementById('c').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('go').click(); });
+</script>
