@@ -1,6 +1,6 @@
 <!doctype html><html lang="ru"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Паспорт документа 43444947b0c9</title>
+<title>Паспорт документа 91d9006d6a9c</title>
 <style>
  body{margin:0;background:#fbf9f5;color:#1b1b1b;font:16px/1.55 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
  .wrap{max-width:820px;margin:0 auto;padding:40px 24px 64px}
@@ -21,13 +21,14 @@
 </style>
 <div class="wrap">
  <h1>Паспорт электронной копии</h1>
- <p class="sub">Документ 43444947b0c9 · создан 2026-10-26 19:57 UTC</p>
+ <p class="sub">Документ 91d9006d6a9c · создан 2026-10-26 20:00 UTC</p>
 
  <div class="card"><div class="grid"><div>
-   <div class="row"><span class="k">Идентификатор</span><span class="mono">43444947b0c9</span></div>
+   <div class="row"><span class="k">Код проверки</span><span class="mono" style="font-size:20px;color:#ff8a3d;font-weight:600">2PBJ72FF</span></div>
+   <div class="row"><span class="k">Идентификатор</span><span class="mono">91d9006d6a9c</span></div>
    <div class="row"><span class="k">Файл</span><span class="mono">document.pdf</span></div>
-   <div class="row"><span class="k">Страниц</span><span>1</span></div>
-   <div class="row"><span class="k">Символов распознано</span><span>450</span></div>
+   <div class="row"><span class="k">Страниц</span><span>2</span></div>
+   <div class="row"><span class="k">Символов распознано</span><span>781</span></div>
    <div class="row"><span class="k">Средняя уверенность</span><span>92%</span></div>
    <div class="row"><span class="k">Оператор</span><span>Марк</span></div>
    <div class="row"><span class="k">Статус</span><span class="ok">проверено</span></div>
@@ -36,25 +37,26 @@
  </div></div>
 
  <div class="card"><h3 style="margin:0 0 12px;font-size:16px">SHA-256 копии</h3>
-  <div class="mono">43444947b0c9a75d9dd4dbfabc955faa7ec5d4d268ddc8b44f7715a1a74e59b4</div></div>
+  <div class="mono">91d9006d6a9ce9d4a73f9ba58d9cfecb39f1022e13456da75089412032127f55</div></div>
 
  <div class="card"><h3 style="margin:0 0 12px;font-size:16px">Страницы</h3>
-  <table><tr><th>№</th><th>Символов</th><th>Уверенность</th><th>SHA-256</th></tr><tr><td>1</td><td>450</td><td>92%</td><td class='mono'>9ea6c2114fca0784…</td></tr></table></div>
+  <table><tr><th>№</th><th>Символов</th><th>Уверенность</th><th>SHA-256</th></tr><tr><td>1</td><td>331</td><td>92%</td><td class='mono'>80107ba084168d08…</td></tr><tr><td>2</td><td>450</td><td>92%</td><td class='mono'>9ea6c2114fca0784…</td></tr></table></div>
 
  <div class="card"><h3 style="margin:0 0 6px;font-size:16px">Сверить копию</h3>
-  <p style="color:#6f675e;font-size:14px;margin:0 0 12px">Вставьте SHA-256 файла — страница покажет, совпадает ли он с паспортом.</p>
-  <input id="h" placeholder="sha256" autocomplete="off">
+  <p style="color:#6f675e;font-size:14px;margin:0 0 12px">Введите код с копии или SHA-256 файла — страница покажет, совпадает ли он с паспортом.</p>
+  <input id="h" placeholder="код или sha256" autocomplete="off">
   <div class="res" id="r"></div>
  </div>
 </div>
 <script>
- const known = "43444947b0c9a75d9dd4dbfabc955faa7ec5d4d268ddc8b44f7715a1a74e59b4";
+ const known = "91d9006d6a9ce9d4a73f9ba58d9cfecb39f1022e13456da75089412032127f55", code = "2PBJ72FF";
  const input = document.getElementById('h'), out = document.getElementById('r');
  input.addEventListener('input', () => {
    const v = input.value.trim().toLowerCase();
    if (!v) { out.textContent = ''; return; }
-   out.textContent = v === known ? 'Совпадает: копия соответствует паспорту.' : 'Не совпадает — файл изменён или это другая копия.';
-   out.style.color = v === known ? '#2f6b34' : '#b3261e';
+   const ok = v === known || v.toUpperCase() === code;
+   out.textContent = ok ? 'Совпадает: копия соответствует паспорту.' : 'Не совпадает — файл изменён или это другая копия.';
+   out.style.color = ok ? '#2f6b34' : '#b3261e';
  });
 </script>
 </html>
